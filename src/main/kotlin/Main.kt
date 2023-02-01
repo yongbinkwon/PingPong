@@ -1,3 +1,6 @@
+import pingpong.Player
+import kotlin.random.Random
+
 fun main() {
-    println("Pingy Pongy")
+    val player = Player(1)
 }

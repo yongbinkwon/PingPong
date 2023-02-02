@@ -2,12 +2,22 @@ package pingpong
 
 import kotlin.random.Random
 
-internal class Player(
-    private val skill: Int
+class Player(
+    private val skill: Int,
+    private val name: String
 ) {
     private var points = Score()
 
-    fun play(opponent: Player) = (if (won(opponent)) this else opponent).apply { points++ }
+    infix fun play(opponent: Player) = (if (won(opponent)) this else opponent).apply { points++ }
+
+    fun eleven() = points.eleven()
+
+    infix fun differential(opponent: Player) = points - opponent.points
+
+    infix fun versus(opponent: Player) = Match(this, opponent)
+
+    override fun toString() = name
+
 
     /*
     fun play(opponent: Player): Player {

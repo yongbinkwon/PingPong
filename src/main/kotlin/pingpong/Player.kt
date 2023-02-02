@@ -7,7 +7,7 @@ internal class Player(
 ) {
     private var points = Score()
 
-    fun play(opponent: Player) = if (won(opponent)) points++ else opponent.points++
+    fun play(opponent: Player) = (if (won(opponent)) this else opponent).apply { points++ }
 
     /*
     fun play(opponent: Player): Player {

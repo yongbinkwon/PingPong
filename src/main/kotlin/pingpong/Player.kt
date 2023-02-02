@@ -2,11 +2,12 @@ package pingpong
 
 import kotlin.random.Random
 
-internal class Player(
+class Player(
+    private val name: String,
     private val skill: Int
 ) {
 
-    fun play(opponent: Player) = if (won(opponent)) this else opponent
+    infix fun playAgainst(opponent: Player) = if (won(opponent)) this else opponent
 
     /*
     fun play(opponent: Player): Player {
@@ -26,4 +27,6 @@ internal class Player(
      */
 
     private fun won(opponent: Player) = Random.nextInt(0, skill+opponent.skill) < skill
+
+    override fun toString() = name
 }

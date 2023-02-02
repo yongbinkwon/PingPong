@@ -1,6 +1,10 @@
+import pingpong.Match
 import pingpong.Player
-import kotlin.random.Random
 
 fun main() {
-    val player = Player(1)
+    val bin = Player("Bin", 9)
+    val th = Player("Tom Henrik", 1)
+
+    val match = Match(bin, th)
+    println(match.playMatch())
 }

@@ -1,6 +1,9 @@
 import pingpong.Player
+import pingpong.Score
 import kotlin.random.Random
 
 fun main() {
-    val player = Player(1)
+    var point = Score()
+    point++
+    println(point.score)
 }

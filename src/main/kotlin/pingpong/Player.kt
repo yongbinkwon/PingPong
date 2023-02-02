@@ -5,8 +5,9 @@ import kotlin.random.Random
 internal class Player(
     private val skill: Int
 ) {
+    private var points = Score()
 
-    fun play(opponent: Player) = if (won(opponent)) this else opponent
+    fun play(opponent: Player) = if (won(opponent)) points++ else opponent.points++
 
     /*
     fun play(opponent: Player): Player {
